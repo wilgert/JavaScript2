@@ -21,12 +21,16 @@ Note: You can ask students to explain a concept or summerise the last lecture th
 
 ## 2. Scope (global, functional and block)
 ### Explanation
-Scopes define the visiblity of declarations of variables and functions.
+Scopes define the visibility of declarations of variables and functions. Variables and functions are accessible 
+1. within the scope they where created
+2. in all child scopes
+3. Unless a variable/function with the same name is created in the child scope
 
-The top level outside all your functions is called the _global scope_. Values defined in the global scope are accessible from everywhere in the code. Whereas, variables defined in local scope can only be accessed and altered inside the scope they were created.
-
+1.
 - `var` and `function` declarations are visible with function scope.
 - `let` and `const` declarations are visible with block scope. A block can be seen as a set of statements enclosed in curly brackets({}).
+
+1. Global scope is nothing special, it's just the outer scope. And because all other scopes are enclosed by it, everything from global scope is accessible in all other scopes.
 
 Global scope:
 
@@ -45,7 +49,7 @@ https://github.com/HackYourFuture/fundamentals/blob/master/fundamentals/scope.md
 ![Scopes](../assets/scopes.png)
 
 ```Javascript
-let villan = "Joker";                        // | global scope
+let villain = "Joker";                       // | global scope
                                              // |
 function myFunction() {                      // |  | function scope
     let hero = "Batman";                     // |  |
@@ -58,7 +62,7 @@ function myFunction() {                      // |  | function scope
     console.log("------")                    // |  |
     console.log(hero);                       // |  |
     console.log(coHero);                     // |  |
-    console.log(villan);                     // |  |
+    console.log(villain);                    // |  |
 }                                            // |  |
                                              // |
 myFunction();                                // |
